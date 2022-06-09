@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"]
+      // 필요시 절대경로 '~/foo/bar' 사용
+    },
+    "rootDir": ".",
+    "outDir": "dist",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "target": "es5",
+    "sourceMap": true,
+    "isolatedModules": true,
+    "allowJs": false,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    // 또는 "preserve"
+    "jsxImportSource": "@emotion/react",
+    "strictNullChecks": true,
+    "noImplicitReturns": false,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "noUnusedLocals": false,
+    "importHelpers": true,
+    "removeComments": true,
+    "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noErrorTruncation": true,
+    "resolveJsonModule": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "noEmitOnError": true
+  },
+  "include": ["src/**/*", "types/*"],
+  "exclude": ["node_modules"]
+}
