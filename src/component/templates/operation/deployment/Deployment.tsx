@@ -1,9 +1,10 @@
 import React from 'react';
+import { VersionDeployment } from '~/src/component/organisms/version';
 
 const Deployment = (): JSX.Element => {
   return (
     <>
-      <div>test</div>
+      <VersionDeployment />
     </>
   );
 };

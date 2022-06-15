@@ -5,6 +5,7 @@ import { IChildren } from '~/src/util/types';
 import { defaultWhite } from '~/src/component/style/color';
 import { DoubleButtonWrapper } from '~/src/component/molecules/wrapper/index';
 import { AddMemberIcon } from '~/src/asset/icons';
+import { CommonBoxStyled } from '~/src/globalStyles';
 
 interface IProps extends IChildren {
   toggle?: () => void;
@@ -15,13 +16,13 @@ interface IProps extends IChildren {
 }
 
 const BoxStyled = styled(Box)`
-  background: ${defaultWhite};
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  margin-top: 16px;
+  padding: 40px;
   border-radius: 8px;
 
-  width: 100%;
-  padding: 40px;
-  margin-top: 16px;
+  background: ${defaultWhite};
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   .divide-group {
     margin-bottom: 20px;
@@ -30,10 +31,6 @@ const BoxStyled = styled(Box)`
       margin-bottom: 0px;
     }
   }
-`;
-
-const CommonBoxStyled = styled(Box)`
-  width: 100%;
 `;
 
 const TitleWithEditWrapper = ({

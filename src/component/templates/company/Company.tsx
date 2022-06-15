@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import CompanyMemberInfo from '../../organisms/infoBlock/CompanyMemberInfo';
-import { Divider } from '~/src/component/atoms';
-import { CompanyBasic, PlanBlock } from '~/src/component/organisms/infoBlock';
+import { Divider, DoubleButton } from '~/src/component/atoms';
+import { CompanyBasic, PlanBlock } from '~/src/component/molecules/info';
+import { UnderBtn } from '~/src/component/molecules/buttons';
+import { CompanyMemberInfo } from '~/src/component/organisms/company';
 
 const Company = (): JSX.Element => {
   const params = useParams().detail;
@@ -10,11 +11,15 @@ const Company = (): JSX.Element => {
 
   const [companyId, setCompanyId] = React.useState<number>(-1);
 
+  const gotoList = () => {
+    navigate('/company/list');
+  };
+
   React.useEffect(() => {
     if (!isNaN(Number(params))) {
       setCompanyId(Number(params));
     } else {
-      navigate('/company/list');
+      gotoList();
     }
   }, []);
 
@@ -22,9 +27,12 @@ const Company = (): JSX.Element => {
     <>
       <CompanyBasic />
       <Divider />
-      <PlanBlock />
+      <PlanBlock isCompany />
       <Divider />
       <CompanyMemberInfo />
+      <UnderBtn
+        rightBtnZone={<DoubleButton onClick={gotoList}>목록으로</DoubleButton>}
+      />
     </>
   );
 };

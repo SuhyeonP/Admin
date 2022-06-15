@@ -1,20 +1,19 @@
 import React from 'react';
 import { Control, Controller } from 'react-hook-form';
 import { TextWithWrapper } from '~/src/component/molecules/wrapper';
-import { OnControl } from '~/src/util/types';
 import { InputContent } from '~/src/component/atoms';
 
 interface IProps {
-  editable: boolean;
-  control?: Control<OnControl, any>;
-  label: string;
+  editable?: boolean;
+  control?: Control<any, any>;
+  label?: string;
   name?: string;
-  value?: string;
+  value?: string | number;
 }
 
 const EditInputValue = ({
   control,
-  editable,
+  editable = false,
   label,
   name,
   value,

@@ -99,3 +99,5 @@
 // type FilteringDate = 'create_date' | 'last_use_date' | '마켓팅동의일';
 //
 // type WithStartEndDate<T> = T & IStartEndDate;
+
+export type Temp = 'temp';

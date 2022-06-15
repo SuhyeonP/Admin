@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { TableLabel } from '~/src/component/atoms';
 
 interface IProps {
-  txt: string;
+  txt: string | number;
   isUrl?: boolean;
   url?: string;
 }

@@ -26,8 +26,9 @@ const SubmitBtnStyled = styled.input<IBtnStyled>(
     const common = css`
       width: 100%;
       padding: 10px 16px;
-      outline: 0;
       border-radius: 4px;
+
+      outline: 0;
     `;
 
     if (isAble) {
@@ -35,7 +36,9 @@ const SubmitBtnStyled = styled.input<IBtnStyled>(
         ${common};
 
         color: ${fontColor};
+
         background-color: ${backgroundColor};
+
         border: 1px solid ${borderColor};
 
         cursor: pointer;
@@ -45,7 +48,9 @@ const SubmitBtnStyled = styled.input<IBtnStyled>(
         ${common};
 
         color: ${defaultWhite};
+
         background-color: grey;
+
         border: 1px solid grey;
 
         cursor: unset;
@@ -93,7 +98,6 @@ const SubmitBtn = ({
     <>
       {isDoubleBtn ? (
         <DoubleBtn
-          isAble={isAble}
           disabled={!isAble}
           type="submit"
           value={label}

@@ -2,6 +2,8 @@ import React from 'react';
 import { Button, ButtonProps, styled } from '@mui/material';
 import { ExtendOmit, TrueFalseString } from '~/src/util/types';
 import { defaultBlack, defaultWhite } from '~/src/component/style/color';
+import { useAppDispatch } from '~/src/redux/hook';
+import { globalActions } from '~/src/redux/slice';
 
 interface IBtnStyled {
   is_right?: boolean;
@@ -13,7 +15,9 @@ interface IBtnStyleProps {
   btn_size?: string;
 }
 
-type IProps = ExtendOmit<ButtonProps> & IBtnStyled;
+interface IProps extends ExtendOmit<ButtonProps>, IBtnStyled {
+  isCancel?: boolean;
+}
 
 const DoubleBtnStyled = styled(Button)(
   ({ is_right, btn_size }: IBtnStyleProps) => {
@@ -55,8 +59,27 @@ const DoubleBtnStyled = styled(Button)(
 const DoubleButton = ({
   is_right = false,
   btn_size = '103px',
+  isCancel = false,
   ...props
 }: IProps): JSX.Element => {
+  const dispatch = useAppDispatch();
+
+  const cancel = () => {
+    dispatch(globalActions.closeDialog());
+  };
+
+  if (isCancel) {
+    return (
+      <DoubleBtnStyled
+        fullWidth
+        is_right={is_right.toString() as TrueFalseString}
+        btn_size={btn_size}
+        onClick={cancel}
+        {...props}
+      />
+    );
+  }
+
   return (
     <DoubleBtnStyled
       fullWidth

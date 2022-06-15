@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import LoginForm from '~/src/component/organisms/form/LoginForm';
 import { LoginTitle } from '~/src/component/molecules/logoWithTitle';
+import { LoginForm } from '~/src/component/organisms/login';
 
 const Login = (): JSX.Element => {
   return (

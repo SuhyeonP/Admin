@@ -1,5 +1,5 @@
 import { Control } from 'react-hook-form';
-import { IGetSelected } from '~/src/component/organisms/fileterOptions/MembersOption';
+import { IGetSelected } from '~/src/component/organisms/member/MembersOption';
 
 export type RequiredString =
   | 'email'
@@ -92,7 +92,7 @@ export interface IRegisterCompany {
 
 export interface ICompanyBase extends IRegisterCompany {
   create_date: string;
-  admin: string;
+  admin: number;
   member_count: number;
 }
 
@@ -136,6 +136,7 @@ export interface IRegisterMemberInfo
   extends IRegisterForm,
     Partial<IMemberInfo> {
   belong: string;
+  companyId?: number;
 }
 
 // todo check type clear
@@ -148,10 +149,11 @@ export type OnControl =
   | IPlanInfo
   | ICompanyBase
   | IPlan
-  | IProductKeyInfo;
+  | IProductKeyInfo
+  | IContainMember;
 
 export interface ISelectedProps {
-  control: Control<OnControl, any>;
+  control: Control<any, any>;
 }
 
 export type UseLink = 'used' | 'unused';
@@ -173,4 +175,29 @@ export interface IHead {
   id: string;
   label: string;
   width: string;
+}
+
+export interface ISimpleMember {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+}
+
+export type AddMemberType = 'origin' | 'new';
+
+export interface IContainMember extends ISearchProps, Partial<IMemberInfo> {
+  selectType: AddMemberType;
+}
+
+export interface IVersion {
+  version: string;
+}
+
+export interface IDeployForm extends IVersion {
+  release_note: any;
+}
+
+export interface IPropsWithAbleToSelect extends ISelectedProps {
+  isDisable?: boolean;
 }

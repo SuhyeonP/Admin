@@ -15,3 +15,8 @@ export const jobsObject: IJobsType = {
   Student: 'Student',
   Etc: 'Etc',
 };
+
+export const versionStatus = {
+  ready: '대기',
+  ongoing: '배포 중',
+};

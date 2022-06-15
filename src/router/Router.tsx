@@ -16,7 +16,7 @@ import {
   SentEmailDetail,
 } from '../component/pages';
 import EmailList from '../component/pages/operation/email/EmailList';
-import BaseLayout from '../component/organisms/layout/BaseLayout';
+import BaseLayout from '../component/molecules/layout/BaseLayout';
 
 const Router = (): JSX.Element => {
   return (

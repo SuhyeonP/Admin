@@ -1,5 +1,5 @@
 import React from 'react';
-import { Deployment as DeploymentTemplate } from '~/src/component/templates';
+import { Deployments as DeploymentTemplate } from '~/src/component/templates';
 
 const Deployments = (): JSX.Element => {
   return (

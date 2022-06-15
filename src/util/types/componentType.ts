@@ -23,3 +23,8 @@ export type MUISxStyle = SxProps<Theme>;
 export type ReactSetState<T> = React.Dispatch<React.SetStateAction<T>>;
 
 export type ReactOnChange = (e: React.FormEvent<Element>) => void;
+
+export interface IRadio {
+  value: string | number;
+  label: string;
+}

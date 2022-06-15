@@ -33,13 +33,13 @@ const HeadSortLabel = ({
     <>
       {headArr.map(head => {
         const id = head.id;
-        const same = sortHandler(id);
+        const same = checkSelectOrderBy(id);
 
         return (
-          <TableCell key={id} sx={{ width: head.width }}>
+          <TableCell key={id} sx={{ width: head.width, minWidth: head.width }}>
             <TableSortLabelStyled
-              active={checkSelectOrderBy(id)}
-              onClick={same}
+              active={same}
+              onClick={sortHandler(id)}
               direction={same ? (sortData.asc ? 'asc' : 'desc') : 'asc'}
             >
               <>
@@ -54,7 +54,7 @@ const HeadSortLabel = ({
   );
 };
 
-function checkEqual(prev, next) {
+function checkEqual(prev: IProps, next: IProps) {
   return JSON.stringify(prev.sortData) === JSON.stringify(next.sortData);
 }
 

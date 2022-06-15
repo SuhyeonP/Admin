@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Grid, styled, TablePagination } from '@mui/material';
-import { InputTitle } from '~/src/component/atoms';
+import { TableLabel } from '~/src/component/atoms';
 import { defaultBlack } from '~/src/component/style/color';
 
 interface IProps {
@@ -19,10 +19,14 @@ const PaginationStyled = styled(Grid)`
 
     color: ${defaultBlack};
 
+    & > .MuiTablePagination-root {
+      border: 0;
+    }
+
     .MuiTablePagination-toolbar {
-      padding-left: 24px;
       display: grid;
       grid-template-columns: auto auto auto;
+      padding-left: 24px;
 
       & > .MuiTablePagination-displayedRows {
         order: 0;
@@ -71,9 +75,9 @@ const CustomTablePagination = ({
       </Grid>
       <Grid item className="sub-pagination">
         <Button type="button">{'<'}</Button>
-        <InputTitle>
+        <TableLabel>
           {page + 1} / {limit}
-        </InputTitle>
+        </TableLabel>
         <Button type="button">{'>'}</Button>
       </Grid>
     </PaginationStyled>

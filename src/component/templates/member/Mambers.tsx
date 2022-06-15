@@ -1,8 +1,10 @@
 import React from 'react';
 import { SubTitle } from '~/src/component/atoms';
-import { MembersOption } from '~/src/component/organisms/fileterOptions';
-import { ExportWithRegister } from '~/src/component/molecules/buttons';
-import { MembersTable } from '~/src/component/organisms/table';
+import {
+  MembersTable,
+  MembersOption,
+  ExportWithRegister,
+} from '~/src/component/organisms/member';
 
 const Members = (): JSX.Element => {
   return (

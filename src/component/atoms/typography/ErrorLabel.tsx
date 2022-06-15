@@ -6,8 +6,9 @@ type IProps = ExtendOmit<TypographyProps>;
 
 const ErrorLabelStyled = styled(Typography)`
   position: absolute;
-  color: red;
   bottom: 5px;
+
+  color: red;
 `;
 
 const ErrorLabel = ({ ...props }: IProps): JSX.Element => {

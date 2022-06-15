@@ -37,8 +37,8 @@ const getTitle = {
       },
       deployment: {
         sub: {
-          detail: '버전 상세',
-          list: '버전 관리',
+          detail: '베포 상세',
+          list: '배포 관리',
         },
       },
     },

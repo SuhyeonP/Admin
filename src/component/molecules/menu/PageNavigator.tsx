@@ -25,7 +25,7 @@ const navigateMap = [
     mainLabel: '운영',
     sub: [
       {
-        label: '버전 관리',
+        label: '배포 관리',
         path: '/operation/deployment/list',
       },
       {
@@ -50,9 +50,11 @@ const navigateMap = [
 ];
 
 const PageNavigatorStyled = styled(Box)`
-  width: 160px;
-  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
   z-index: 2;
+
+  width: 160px;
+
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
 `;
 
 const PageNavigator = (): JSX.Element => {

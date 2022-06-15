@@ -5,14 +5,14 @@ import { ExtendOmit } from '~/src/util/types';
 type IProps = ExtendOmit<TypographyProps>;
 
 const TitleStyled = styled(Typography)`
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
-  text-align: center;
+  display: inline-block;
 
   color: #000000;
-  display: inline-block;
+  font-weight: 700;
+  font-size: 24px;
+  font-style: normal;
+  line-height: 28px;
+  text-align: center;
 
   /* Inside auto layout */
 `;

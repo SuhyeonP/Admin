@@ -1,3 +1,3 @@
-import ExportWithRegister from './ExportWithRegister';
+import UnderBtn from './UnderBtn';
 
-export { ExportWithRegister };
+export { UnderBtn };

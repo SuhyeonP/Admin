@@ -6,17 +6,21 @@ import { BasicTitle, OutlinedButton, Title } from '~/src/component/atoms';
 import { LinkLogo } from '~/src/asset/icons';
 
 const HeaderStyled = styled(Box)`
-  width: 100%;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 3;
+
+  width: 100%;
+
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   & > .MuiPaper-root {
     top: 0;
     left: 0;
-    background-color: #fff;
+
+    width: 100vw;
 
     height: 64px;
-    width: 100vw;
+
+    background-color: #fff;
   }
 `;
 
@@ -26,8 +30,8 @@ const ToolBarStyled = styled(Toolbar)`
 
 const HeadInner = styled(Box)`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   width: 100%;
 `;
