@@ -1,66 +1,27 @@
 import React from 'react';
-import { Outlet, Route, Routes } from 'react-router-dom';
-import CheckAuth from './CheckAuth';
-import {
-  EditTemplate,
-  Companies,
-  Company,
-  EmailTemplateList,
-  Login,
-  Member,
-  Members,
-  Deployments,
-  Deployment,
-  Error,
-  SendNewEmail,
-  SentEmailDetail,
-} from '../component/pages';
-import EmailList from '../component/pages/operation/email/EmailList';
-import BaseLayout from '../component/molecules/layout/BaseLayout';
+import { Routes, Route } from 'react-router-dom';
+import BaseLayout from '~/components/common/layout/BaseLayout';
+import Login from '~/components/page/login/Login';
+import ManageLayout from '~/components/common/layout/ManageLayout';
+import Customer from '~/components/page/customer/Customer';
+import Member from '~/components/page/member/Member';
+import Alert from '~/components/page/alert/Alert';
 
 const Router = (): JSX.Element => {
   return (
-    <Routes>
-      <Route path="/" element={<CheckAuth />}>
-        <Route path="member" element={<BaseLayout />}>
-          <Route index element={<Error />} />
-          <Route path="list" element={<Members />} />
-          <Route path="detail=:detail" element={<Member />} />
-        </Route>
-        <Route path="company" element={<BaseLayout />}>
-          <Route index element={<Error />} />
-          <Route path="list" element={<Companies />} />
-          <Route path="detail=:detail" element={<Company />} />
-        </Route>
-        <Route path="operation" element={<BaseLayout />}>
-          <Route index element={<Error />} />
-          <Route path="email-template" element={<Outlet />}>
-            <Route index element={<Error />} />
-            <Route path="list" element={<EmailTemplateList />} />
-            <Route path="edit=:templateId" element={<EditTemplate />} />
-          </Route>
-          <Route path="send-email" element={<Outlet />}>
-            <Route index element={<Error />} />
-            <Route path="list" element={<EmailList />} />
-            <Route path="create" element={<SendNewEmail />} />
-            <Route path="detail=:sentMailId" element={<SentEmailDetail />} />
-          </Route>
-          <Route path="deployment" element={<Outlet />}>
-            <Route index element={<Error />} />
-            <Route path="list" element={<Deployments />} />
-            <Route path="detail=:detail" element={<Deployment />} />
+    <>
+      <Routes>
+        <Route path="/" element={<BaseLayout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<ManageLayout />}>
+            <Route index element={<Customer />} />
+            <Route path="/alert" element={<Alert />} />
+            <Route path="/detail/:customer" element={<Member />} />
           </Route>
         </Route>
-        <Route path="admin" element={<BaseLayout />}>
-          <Route index element={<Error />} />
-          <Route path="admin-setting" element={<>admin</>} />
-        </Route>
-      </Route>
-      <Route path="login" element={<CheckAuth />}>
-        <Route index element={<Login />} />
-      </Route>
-      <Route path="*" element={<Error />} />
-    </Routes>
+        <Route path="/*" element={<>err</>} />
+      </Routes>
+    </>
   );
 };
 

@@ -47,7 +47,7 @@ node_modules/
 .eslintcache
 
 # dotenv environment variables file
-.env
+#.env
 .env.test
 
 # yarn v2
@@ -92,7 +92,7 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+#Icon
 
 # Thumbnails
 ._*
